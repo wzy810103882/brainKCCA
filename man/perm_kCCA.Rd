@@ -2,11 +2,30 @@
 % Please edit documentation in R/perm_kCCA.R
 \name{perm_kCCA}
 \alias{perm_kCCA}
+\alias{perm_kCCA_par}
 \title{Calculation of Strength of the Connectivity among multiple Brain Regions
 This function is the core for kernel canonical correlation. Generally you do not need to use this function.}
 \usage{
 perm_kCCA(x, y, sig = 0.1, gama = 0.1, ncomps = 1, permNum = 500,
   kernel = "rbfdot")
+
+perm_kCCA_par(x, y, sig = 0.1, gama = 0.1, ncomps = 1, permNum = 500,
+  kernel = "rbfdot")
+}
+\arguments{
+\item{x}{to be added}
+
+\item{y}{to be added}
+
+\item{sig}{to be added}
+
+\item{gama}{to be added}
+
+\item{ncomps}{to be added}
+
+\item{permNum}{to be added}
+
+\item{kernel}{to be added}
 }
 \value{
 (lists of) list of brain regions, permutation coefficient, p-value, region name and region type ("two" or "multiple").

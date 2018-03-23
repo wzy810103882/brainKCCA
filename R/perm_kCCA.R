@@ -8,6 +8,14 @@
 #' Calculation of Strength of the Connectivity among multiple Brain Regions
 #' This function is the core for kernel canonical correlation. Generally you do not need to use this function.
 #' @author Xubo Yue, Chiawei Hsu (tester), Jian Kang (maintainer)
+#' @rdname perm_kCCA
+#' @param x to be added
+#' @param y to be added
+#' @param sig to be added
+#' @param gama to be added
+#' @param ncomps to be added
+#' @param permNum to be added
+#' @param kernel to be added
 #' @return (lists of) list of brain regions, permutation coefficient, p-value, region name and region type ("two" or "multiple").
 #' @details Kernel canonical correlation analysis (KCCA) can explore the nonlinear relationship between two variables.
 #' It transformed sample vectors into the Hilbert space and maximize correlation coefficient by solving quadratically regularized Lagrangean function.
@@ -23,6 +31,7 @@ perm_kCCA = function(x,y,sig=0.1,gama=0.1,ncomps=1,permNum = 500,kernel="rbfdot"
   return(list(permcoef = permcoef,rcorcoef=rcorcoef,pvalue=mean(permcoef>rcorcoef)))
 }
 
+#' @rdname perm_kCCA
 #' @export
 perm_kCCA_par = function(x,y,sig=0.1,gama=0.1,ncomps=1,permNum = 500,kernel="rbfdot") {
   n = nrow(x)
