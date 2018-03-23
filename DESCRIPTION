@@ -1,18 +1,16 @@
 Package: brainKCCA
-Title: Region-level Connectivity Network Construction via Kernel
-        Canonical Correlation Analysis
+Title: Region-level Connectivity Network Construction via Kernel Canonical Correlation Analysis
 Version: 0.0.0.9000
 Authors@R: c(person("Xubo", "Yue", email = "maxyxb@umich.edu", role = "aut"),person("Jian", "Kang", email = "jiankang@umich.edu", role = "cre"))
+Maintainer: Jian Kang <jiankang@umich.edu>
 Depends: R(>= 2.10.0)
-Description: Calculate connection between (among) brain regions and plot connection lines
+Description: Calculate connection between (among) brain regions and plot connection lines.
 License: LGPL
 Encoding: UTF-8
 LazyData: false
 RoxygenNote: 6.0.1
-Imports: CCA, kernlab, parallel, elasticnet, rgl, brainR, misc3d,
-        utils, oro.nifti, utils, knitr
+Imports: CCA, kernlab, parallel, elasticnet, rgl, brainR, misc3d, utils, oro.nifti, knitr
 NeedsCompilation: no
 Packaged: 2018-03-11 00:19:43 UTC; maxyxb
-Author: Xubo Yue [aut],
-  Jian Kang [cre]
-Maintainer: Jian Kang <jiankang@umich.edu>
+Author: Xubo Yue [aut], Jian Kang [cre]
+
