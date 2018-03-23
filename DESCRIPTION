@@ -18,6 +18,6 @@ Author: Xubo Yue [aut],
 Maintainer: Jian Kang <jiankang@umich.edu>
 Suggests: 
     covr
-Remotes: neuroconductor/oro.nifti@c25f6bcb1200506a3e39127f550bcca7766b0107,
-    neuroconductor/brainR@f4f0dd50c3c07e0a51758274f9c76b479ee45d59
 biocViews: 
+Remotes: neuroconductor/oro.nifti@a3d3633139b9095f1d502e4fc43e1b86cab3ddd5,
+    neuroconductor/brainR@b7219c680629001410a65f9973694dc038d30268
