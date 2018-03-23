@@ -21,6 +21,7 @@
 #' of brain graphic network. All significant regions are connected by colored lines.
 #' @details If you provide an input with multiple patients, the function will ask 
 #' you to specify which patients data you would like to use.
+#' @importFrom rgl rgl.snapshot
 #' @export
 #' @examples  
 #' #result<-permkCCA_multipleRegion(imageDat = "preproc_con21_rest_MNI_2mm", 

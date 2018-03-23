@@ -36,6 +36,8 @@
 #' regions discovered via multi-attribute canonical correlation graphs."NeuroImage,141, 431-441.
 #' (2) Use rgl.snapshot() function if you would like to save plot but forgot to use TRUE in screenShot argument.
 #' @references \url{https://www.ncbi.nlm.nih.gov/pubmed/27474522}
+#' @importFrom utils read.table
+#' @importFrom stats p.adjust
 #' @export
 #' @examples
 #' #result0<-permkCCA_multipleRegion(imageDat=c("preproc_con21_rest_MNI_2mm", "preproc_con23_rest_MNI_2mm"), region=c(1,60,70), regionCode="RegionList.txt", niiFile2="AAL_MNI_2mm.nii") #user can provide region data and region list

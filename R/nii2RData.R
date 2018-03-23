@@ -30,6 +30,7 @@
 #' (2) If you would like to read multiple imaging files, and if you did not use saveName="None" argument, it can 
 #' sometimes take a large storage. For example, if you read 100 files, then 100
 #' "RData" files will be generated and thus take a large storage space. Thus, saveName="None" is highly recommended.
+#' @importFrom utils txtProgressBar setTxtProgressBar
 #' @export
 #' @examples  
 #' #testcase1 <- nii2RData(niiFile1 = "preproc_con21_rest_MNI_2mm", saveName = "None") 

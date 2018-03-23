@@ -10,6 +10,8 @@
 #' @details you need to specify the path where csv files 
 #' (containing KCCA information)locoated. This function
 #' will read all csv files listed in the path. 
+#' @importFrom utils read.csv type.convert
+#' @importFrom stats aggregate
 #' @export
 #' @examples
 #' #summary_data <- meanConnection(path = "UM_1_result", threshold=0.25)

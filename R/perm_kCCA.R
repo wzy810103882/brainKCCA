@@ -13,13 +13,13 @@
 #' It transformed sample vectors into the Hilbert space and maximize correlation coefficient by solving quadratically regularized Lagrangean function.
 #' Refer to Kang's paper for more details: Kang J, Bowman FD, Mayberg H, Liu H (2016). "A depression network of functionallyconnected regions discovered via multi-attribute canonical correlation graphs."NeuroImage,141, 431-441.
 #' @references \url{https://www.ncbi.nlm.nih.gov/pubmed/27474522}
+#' @importFrom kernlab kcor kcca
 #' @export
 perm_kCCA = function(x,y,sig=0.1,gama=0.1,ncomps=1,permNum = 500,kernel="rbfdot") {
-  require(kernlab)
   n = nrow(x)
-  res =  kernlab::kcca(x,y,kpar=list(sigma=sig),gamma = gama, ncomps = ncomps, kernel=kernel)
-  rcorcoef = abs(kernlab::kcor(res)[1])
-  permcoef = sapply_pb(1:permNum, function(i) return(abs(kernlab::kcor(kernlab::kcca(x[sample(1:n,n),],y,kpar=list(sigma=sig),gamma = gama, ncomps = ncomps)))[1]))
+  res =  kcca(x,y,kpar=list(sigma=sig),gamma = gama, ncomps = ncomps, kernel=kernel)
+  rcorcoef = abs(kcor(res)[1])
+  permcoef = sapply_pb(1:permNum, function(i) return(abs(kcor(kcca(x[sample(1:n,n),],y,kpar=list(sigma=sig),gamma = gama, ncomps = ncomps)))[1]))
   return(list(permcoef = permcoef,rcorcoef=rcorcoef,pvalue=mean(permcoef>rcorcoef)))
 }
 
