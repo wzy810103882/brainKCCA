@@ -16,3 +16,8 @@ Packaged: 2018-03-11 00:19:43 UTC; maxyxb
 Author: Xubo Yue [aut],
   Jian Kang [cre]
 Maintainer: Jian Kang <jiankang@umich.edu>
+Suggests: 
+    covr
+Remotes: neuroconductor/oro.nifti@c25f6bcb1200506a3e39127f550bcca7766b0107,
+    neuroconductor/brainR@f4f0dd50c3c07e0a51758274f9c76b479ee45d59
+biocViews: 
