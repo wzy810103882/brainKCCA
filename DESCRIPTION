@@ -19,5 +19,5 @@ Maintainer: Jian Kang <jiankang@umich.edu>
 Suggests: 
     covr
 biocViews: 
-Remotes: neuroconductor/oro.nifti@a3d3633139b9095f1d502e4fc43e1b86cab3ddd5,
-    neuroconductor/brainR@b7219c680629001410a65f9973694dc038d30268
+Remotes: neuroconductor/oro.nifti@36474ce8faeb769d00c7bab606f9bb1ca46ccba8,
+    neuroconductor/brainR@938cc884f0fb6a9b05258b87e4839c7b48f2bab4
