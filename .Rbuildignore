@@ -1,5 +1,4 @@
-^DESCRIPTION\.bak$
-^\.travis\.yml$
+^.*\.Rproj$
+^\.Rproj\.user$
 ^appveyor\.yml$
-^\./\.travis\.yml\.bak$
-^\./appveyor\.yml\.bak$
+^\.travis\.yml$
