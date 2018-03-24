@@ -4,7 +4,8 @@
 \alias{perm_kCCA}
 \alias{perm_kCCA_par}
 \title{Calculation of Strength of the Connectivity among multiple Brain Regions
-This function is the core for kernel canonical correlation. Generally you do not need to use this function.}
+This function is the core for kernel canonical correlation. Generally you do not need to use this function unless you are famaliar with kcca
+algorithm.}
 \usage{
 perm_kCCA(x, y, sig = 0.1, gama = 0.1, ncomps = 1, permNum = 500,
   kernel = "rbfdot")
@@ -13,26 +14,27 @@ perm_kCCA_par(x, y, sig = 0.1, gama = 0.1, ncomps = 1, permNum = 500,
   kernel = "rbfdot")
 }
 \arguments{
-\item{x}{to be added}
+\item{x}{region 1, a matrix containing data index by row.}
 
-\item{y}{to be added}
+\item{y}{region 2, a matrix containing data index by row.}
 
-\item{sig}{to be added}
+\item{sig}{inverse kernel width for the Radial Basis kernel function "rbfdot" and the Laplacian kernel "laplacedot".}
 
-\item{gama}{to be added}
+\item{gama}{regularization parameter (default: 0.1).}
 
-\item{ncomps}{to be added}
+\item{ncomps}{number of canonical components (default: 1).}
 
-\item{permNum}{to be added}
+\item{permNum}{number of permutation.}
 
-\item{kernel}{to be added}
+\item{kernel}{type of kernel.}
 }
 \value{
 (lists of) list of brain regions, permutation coefficient, p-value, region name and region type ("two" or "multiple").
 }
 \description{
 Calculation of Strength of the Connectivity among multiple Brain Regions
-This function is the core for kernel canonical correlation. Generally you do not need to use this function.
+This function is the core for kernel canonical correlation. Generally you do not need to use this function unless you are famaliar with kcca
+algorithm.
 }
 \details{
 Kernel canonical correlation analysis (KCCA) can explore the nonlinear relationship between two variables.
