@@ -1,21 +1,15 @@
-# perm_kCCA = function(x,y,sig=0.00001,gama=0.01,ncomps=10,permNum = 50,kernel="rbfdot") {
-#   n = nrow(x)
-#   res = kcca_cpp(x,y,sig,gama,ncomps)
-#   rcorcoef = abs(res[[1]][1])
-#   permcoef = sapply_pb(1:permNum, function(i) return(abs(kcca_cpp_2(x[sample(1:n,n),],res[[2]],sig,gama,ncomps)[[1]][1])))
-#   return(list(permcoef = permcoef,rcorcoef=rcorcoef,pvalue=mean(permcoef>rcorcoef)))
-# }
 #' Calculation of Strength of the Connectivity among multiple Brain Regions
-#' This function is the core for kernel canonical correlation. Generally you do not need to use this function.
+#' This function is the core for kernel canonical correlation. Generally you do not need to use this function unless you are famaliar with kcca
+#' algorithm.
 #' @author Xubo Yue, Chiawei Hsu (tester), Jian Kang (maintainer)
 #' @rdname perm_kCCA
-#' @param x to be added
-#' @param y to be added
-#' @param sig to be added
-#' @param gama to be added
-#' @param ncomps to be added
-#' @param permNum to be added
-#' @param kernel to be added
+#' @param x region 1, a matrix containing data index by row.
+#' @param y region 2, a matrix containing data index by row.
+#' @param sig inverse kernel width for the Radial Basis kernel function "rbfdot" and the Laplacian kernel "laplacedot".
+#' @param gama regularization parameter (default: 0.1).
+#' @param ncomps number of canonical components (default: 1).
+#' @param permNum number of permutation.
+#' @param kernel type of kernel.
 #' @return (lists of) list of brain regions, permutation coefficient, p-value, region name and region type ("two" or "multiple").
 #' @details Kernel canonical correlation analysis (KCCA) can explore the nonlinear relationship between two variables.
 #' It transformed sample vectors into the Hilbert space and maximize correlation coefficient by solving quadratically regularized Lagrangean function.
@@ -49,7 +43,7 @@ sapply_pb <- function(X, FUN, ...) {
   pb_Total <- length(X)
   counter <- 0
   pb <- txtProgressBar(min = 0, max = pb_Total, style = 3)
-
+  
   wrapper <- function(...){
     curVal <- get("counter", envir = env)
     assign("counter", curVal +1 ,envir=env)
@@ -74,16 +68,16 @@ partition<-function(imageDat){
 
 
 regionList<-function(regionData, regionCode, resolution="2mm"){
-
+  
   cat("reading and manipulating the regionData...", "\n")
   largeMatrix<-oro.nifti::readNIfTI(regionData)
   longVector<-expand.grid(largeMatrix)
-
+  
   cat("reading and manipulating the regionCode...", "\n")
   regionCode<-read.table(regionCode)
-
+  
   if(dim(regionCode)[2]!=3) stop("Region list can only have 3 columns.")
-
+  
   center2mm = c(46,64,37)
   if(resolution=="2mm") coords2mm = expand.grid(-2*(1:91-center2mm[1]),2*(1:109-center2mm[2]),2*(1:91-center2mm[3]))
   if(resolution=="3mm") coords2mm = expand.grid(-3*(1:91-center2mm[1]),3*(1:109-center2mm[2]),3*(1:91-center2mm[3]))
@@ -92,9 +86,7 @@ regionList<-function(regionData, regionCode, resolution="2mm"){
     temp<- rbind(temp,t(as.matrix(colMeans(coords2mm[which(largeMatrix==regionCode[i,2],arr.ind = F),]))))
   regionCode<-cbind(temp, regionCode)
   return(list(longVector, regionCode))
-
+  
 }
-
-
 
 
