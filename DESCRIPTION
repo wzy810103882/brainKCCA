@@ -18,10 +18,8 @@ Imports: CCA, kernlab, parallel, elasticnet, rgl, brainR, misc3d,
 NeedsCompilation: no
 Packaged: 2018-03-11 00:19:43 UTC; maxyxb
 Author: Xubo Yue [aut], Jian Kang [cre]
-Suggests: 
-    covr,
-    testthat
-Remotes:  
-    neuroconductor/oro.nifti@b494570240aa1a8c40b7a36f4bfb10ffcf44b765,
-    neuroconductor/brainR@50af134a82eec7d2bc5bb82884ad703f635d3036
-biocViews: 
+Suggests: covr, testthat
+biocViews:
+Remotes: 
+    neuroconductor/oro.nifti@abbfadf8976d2c29f518c76580d9095d3994439e,
+    neuroconductor/brainR@ff405b1579df17dcf3be3352a6f5269f87c67062
