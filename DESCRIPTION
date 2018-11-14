@@ -20,6 +20,7 @@ Packaged: 2018-03-11 00:19:43 UTC; maxyxb
 Author: Xubo Yue [aut], Jian Kang [cre]
 Suggests: covr, testthat
 biocViews:
+Repository: Neuroconductor
 Remotes: 
-    neuroconductor/oro.nifti@abbfadf8976d2c29f518c76580d9095d3994439e,
-    neuroconductor/brainR@ff405b1579df17dcf3be3352a6f5269f87c67062
+    neuroconductor/oro.nifti@f2b69621fdb62e21c79a13e8a16ab30f49b77efc,
+    neuroconductor/brainR@5e61174a4eeba0b3215a0c98f4f95b16d744458d
